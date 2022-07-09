@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div >
+            <div>
+                {% with messages = get_flashed_messages() %}   
+                {% if messages %}                          
+                    <h2>FLASH!!!!! AHHHHHHHH</h2>
+                        {% for message in messages %}          
+                            <p>{{message}}</p>   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <h2>Here are the emails:</h2>
+            {% for email in emails %}
+                <p>{{email.email}}  {{email.created_at}}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
